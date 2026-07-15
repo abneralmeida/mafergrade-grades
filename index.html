@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Grades metálicas sob medida para pisos industriais, passarelas, plataformas, tráfego leve e pesado, offshore e projetos arquitetônicos. Solicite uma análise técnica.">
+  <meta name="theme-color" content="#071e38">
+  <meta property="og:title" content="Grades metálicas sob medida | Mafer Grade">
+  <meta property="og:description" content="Soluções em grades metálicas para cargas, ambientes e projetos de diferentes complexidades.">
+  <meta property="og:image" content="assets/app-01-trafego-leve-v2.webp">
+  <title>Grades metálicas sob medida | Mafer Grade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: "Galgo";
+      src: url("assets/fonts/GalgoVF.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+    }
+
+    :root {
+      --navy: #071e38;
+      --navy-2: #0b2c50;
+      --red: #ef343f;
+      --red-dark: #c81f2a;
+      --steel: #dce3e8;
+      --steel-2: #aebcc8;
+      --paper: #f4f5f3;
+      --white: #ffffff;
+      --ink: #0e1823;
+      --muted: #5f6b75;
+      --line: #bdc8cf;
+      --green: #087b59;
+      --max: 1280px;
+      --radius: 7px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open,
+    body.modal-open { overflow: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+    .container { width: min(var(--max), calc(100% - 64px)); margin-inline: auto; }
+    .section { padding: 116px 0; }
+    .eyebrow {
+      margin: 0 0 28px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      max-width: 1080px;
+      margin: 0;
+      font-family: "Galgo", "Arial Narrow", sans-serif;
+      font-size: clamp(70px, 8vw, 116px);
+      font-weight: 700;
+      line-height: .9;
+      letter-spacing: .005em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .section-lead { max-width: 720px; margin: 26px 0 0; color: var(--muted); font-size: 19px; }
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background: none;
+      color: inherit;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border 180ms ease;
+    }
+    .btn::after { content: "→"; font-size: 18px; line-height: 1; transition: transform 180ms ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:hover::after { transform: translateX(4px); }
+    .btn--red { background: var(--red); color: var(--white); box-shadow: 0 15px 35px rgba(239,52,63,.2); }
+    .btn--red:hover { background: var(--red-dark); }
+    .btn--dark { background: var(--navy); color: var(--white); }
+    .btn--dark:hover { background: var(--red); }
+    .btn--line { border-color: rgba(255,255,255,.55); color: var(--white); background: rgba(7,30,56,.18); }
+    .btn--line:hover { background: var(--white); color: var(--navy); }
+    .microcopy { margin: 10px 0 0; color: #77828a; font-size: 10px; line-height: 1.4; text-align: center; }
+
+    .hero-shell { padding: 10px 10px 0; background: var(--paper); }
+    .hero {
+      position: relative;
+      min-height: 650px;
+      height: min(850px, calc(100svh - 112px));
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+      isolation: isolate;
+    }
+    .hero__image {
+      position: absolute;
+      z-index: -4;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.8) contrast(1.08);
+      transform: scale(1.015);
+      animation: hero-image 1.2s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(4,18,34,.96) 0%, rgba(4,18,34,.82) 37%, rgba(4,18,34,.28) 70%, rgba(4,18,34,.08) 100%),
+        linear-gradient(0deg, rgba(4,18,34,.82) 0%, transparent 56%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(90deg, #000, transparent 62%);
+    }
+    @keyframes hero-image { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1.015); } }
+    .hero__header {
+      position: relative;
+      z-index: 10;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-bottom: 1px solid rgba(255,255,255,.25);
+    }
+    .brand { width: 218px; flex: 0 0 auto; }
+    .brand img { width: 100%; }
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav > a:not(.btn) { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 700; }
+    .nav > a:not(.btn):hover { color: #ff737c; }
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50%;
+      background: rgba(7,30,56,.35);
+      color: var(--white);
+      cursor: pointer;
+    }
+    .menu-toggle span { position: absolute; width: 19px; height: 2px; background: currentColor; transition: transform 180ms ease; }
+    .menu-toggle span:first-child { transform: translateY(-4px); }
+    .menu-toggle span:last-child { transform: translateY(4px); }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: rotate(-45deg); }
+    .hero__content {
+      position: absolute;
+      z-index: 3;
+      left: max(32px, calc((100% - var(--max)) / 2));
+      bottom: 54px;
+      width: min(800px, calc(100% - 400px));
+      animation: rise .8s .18s both;
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero__eyebrow { margin: 0 0 24px; color: #ff737c; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .hero__title {
+      margin: 0;
+      font-family: "Galgo", "Arial Narrow", sans-serif;
+      font-size: clamp(126px, 14vw, 216px);
+      font-weight: 700;
+      line-height: .66;
+      text-transform: uppercase;
+      text-shadow: 0 8px 30px rgba(0,0,0,.28);
+    }
+    .hero__title span {
+      display: block;
+      margin: 30px 0 0;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(17px, 1.65vw, 24px);
+      font-weight: 600;
+      line-height: 1.25;
+      text-transform: none;
+      text-shadow: none;
+    }
+    .hero__action {
+      position: absolute;
+      z-index: 5;
+      right: max(32px, calc((100% - var(--max)) / 2));
+      bottom: 48px;
+      width: 304px;
+      padding: 24px;
+      color: var(--ink);
+      background: rgba(255,255,255,.93);
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: var(--radius);
+      box-shadow: 0 24px 60px rgba(0,0,0,.24);
+      backdrop-filter: blur(16px);
+      animation: rise .8s .38s both;
+    }
+    .hero__action strong { display: block; margin-bottom: 8px; font-size: 15px; }
+    .hero__action p { margin: 0 0 17px; color: var(--muted); font-size: 12px; }
+    .hero__action .btn { width: 100%; }
+    .hero__marker {
+      position: absolute;
+      z-index: 4;
+      top: 126px;
+      right: max(32px, calc((100% - var(--max)) / 2));
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 28px;
+    }
+    .hero__marker div { min-width: 95px; padding-left: 13px; border-left: 2px solid var(--red); }
+    .hero__marker strong { display: block; font-size: 13px; }
+    .hero__marker span { display: block; margin-top: 3px; color: #d5e0e9; font-size: 9px; text-transform: uppercase; }
+    .scroll-cue {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      bottom: 20px;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 50%;
+      color: var(--white);
+      text-decoration: none;
+      transform: translateX(-50%);
+    }
+    .scroll-cue span { animation: nudge 1.5s ease-in-out infinite; }
+    @keyframes nudge { 50% { transform: translateY(4px); } }
+
+    .proof-rail { background: var(--white); border-bottom: 1px solid var(--line); }
+    .proof-rail__inner { min-height: 100px; display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); }
+    .proof-rail__label,
+    .proof-chip { display: flex; align-items: center; gap: 13px; padding: 20px 22px; border-right: 1px solid var(--line); }
+    .proof-rail__label { padding-left: 0; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .proof-chip:last-child { border-right: 0; padding-right: 0; }
+    .proof-chip__icon { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid var(--green); border-radius: 50%; color: var(--green); font-size: 12px; flex: 0 0 auto; }
+    .proof-chip strong { display: block; font-size: 12px; line-height: 1.25; }
+    .proof-chip span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; text-transform: uppercase; }
+
+    .criteria { background: var(--paper); overflow: hidden; }
+    .criteria__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 100px; align-items: end; }
+    .criteria__intro { position: relative; }
+    .criteria__intro::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -120px;
+      top: -90px;
+      width: 390px;
+      aspect-ratio: 1;
+      opacity: .18;
+      background-image: linear-gradient(var(--navy) 1px, transparent 1px), linear-gradient(90deg, var(--navy) 1px, transparent 1px);
+      background-size: 18px 18px;
+      transform: perspective(500px) rotateX(55deg) rotateZ(-10deg);
+    }
+    .criteria__list { counter-reset: criteria; border-top: 1px solid var(--line); }
+    .criterion { counter-increment: criteria; display: grid; grid-template-columns: 46px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .criterion::before { content: "0" counter(criteria); color: var(--red); font-size: 11px; font-weight: 800; }
+    .criterion h3 { margin: 0; font-size: 17px; }
+    .criterion p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+
+    .solutions { padding: 118px 0; background: var(--navy); color: var(--white); overflow: hidden; }
+    .solutions__head { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: end; margin-bottom: 74px; }
+    .solutions .section-lead { color: #c4d0da; }
+    .solutions__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .solution-row {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,.18);
+      background: var(--navy-2);
+      text-decoration: none;
+      overflow: hidden;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+    .solution-row::before { content: ""; position: absolute; z-index: 3; top: 0; left: 0; right: 0; height: 4px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 260ms ease; }
+    .solution-row:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.42); box-shadow: 0 24px 46px rgba(0,0,0,.22); }
+    .solution-row:hover::before { transform: scaleX(1); }
+    .solution-row__image { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 600ms cubic-bezier(.2,.8,.2,1), filter 220ms ease; }
+    .solution-row:hover .solution-row__image { transform: scale(1.035); filter: saturate(1.04); }
+    .solution-row__body { flex: 1; display: grid; grid-template-columns: 34px 1fr auto; grid-template-rows: auto 1fr; gap: 15px 12px; align-items: start; padding: 25px 24px 27px; background: var(--navy-2); }
+    .solution-row__index { padding-top: 6px; color: #ff737c; font-size: 11px; font-weight: 800; }
+    .solution-row h3 { margin: 0; font-family: "Galgo", sans-serif; font-size: 45px; line-height: .9; text-transform: uppercase; }
+    .solution-row p { grid-column: 2 / 4; max-width: 520px; margin: 0; color: #c7d2dc; font-size: 13px; }
+    .solution-row__arrow { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.52); border-radius: 50%; font-size: 22px; }
+
+    .application { padding: 118px 0; background: var(--white); overflow: hidden; }
+    .application__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .application-card { display: grid; grid-template-rows: auto 1fr; overflow: hidden; background: var(--navy); color: var(--white); }
+    .application-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
+    .application-card:hover img { transform: scale(1.035); }
+    .application-card__copy { min-height: 230px; padding: 32px 34px 36px; background: var(--navy); }
+    .application-card:nth-child(2) .application-card__copy { background: var(--navy-2); }
+    .application-card__copy span { color: #ff737c; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .application-card__copy h3 { margin: 11px 0 0; font-family: "Galgo", sans-serif; font-size: 62px; line-height: .9; text-transform: uppercase; }
+    .application-card__copy p { max-width: 520px; margin: 14px 0 0; color: #d4dee6; font-size: 14px; }
+
+    .heritage { background: var(--steel); overflow: hidden; }
+    .heritage__grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 84px; align-items: center; }
+    .heritage__visual { position: relative; min-height: 620px; }
+    .heritage__visual::before {
+      content: "";
+      position: absolute;
+      inset: 26px 46px 0 0;
+      border: 1px solid rgba(7,30,56,.3);
+      background-image: linear-gradient(rgba(7,30,56,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(7,30,56,.16) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .heritage__visual img { position: absolute; z-index: 2; right: 0; bottom: 0; width: 90%; height: 82%; object-fit: cover; box-shadow: 0 24px 60px rgba(7,30,56,.17); }
+    .heritage__stamp {
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      width: 160px;
+      height: 160px;
+      display: grid;
+      place-content: center;
+      padding: 20px;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%);
+    }
+    .heritage__stamp strong { font-family: "Galgo", sans-serif; font-size: 52px; line-height: .72; text-transform: uppercase; }
+    .heritage__stamp span { margin-top: 12px; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .heritage__facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 46px; border-top: 1px solid rgba(7,30,56,.25); }
+    .heritage__fact { padding: 22px 20px 0 0; border-right: 1px solid rgba(7,30,56,.25); }
+    .heritage__fact:not(:first-child) { padding-left: 20px; }
+    .heritage__fact:last-child { border-right: 0; }
+    .heritage__fact strong { display: block; font-size: 13px; }
+    .heritage__fact span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+
+    .capability { background: var(--paper); }
+    .capability__head { display: grid; grid-template-columns: 1.25fr .75fr; gap: 90px; align-items: end; }
+    .capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 76px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .capability-item { min-height: 280px; padding: 32px 28px; border-right: 1px solid var(--line); }
+    .capability-item:last-child { border-right: 0; }
+    .capability-item__icon { width: 50px; height: 50px; display: grid; place-items: center; background: var(--navy); color: var(--white); font-family: "Galgo", sans-serif; font-size: 30px; }
+    .capability-item h3 { margin: 54px 0 10px; font-size: 16px; }
+    .capability-item p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .process { background: var(--white); }
+    .process__head { display: grid; grid-template-columns: 1.32fr .68fr; gap: 80px; align-items: end; }
+    .process-grid { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 80px; }
+    .process-step { counter-increment: step; position: relative; min-height: 290px; padding: 78px 30px 28px; border: 1px solid var(--line); border-right: 0; }
+    .process-step:last-child { border-right: 1px solid var(--line); }
+    .process-step::before { content: "0" counter(step); position: absolute; top: 24px; left: 28px; color: var(--red); font-family: "Galgo", sans-serif; font-size: 34px; }
+    .process-step::after { content: ""; position: absolute; top: 39px; right: -16px; z-index: 2; width: 31px; height: 1px; background: var(--red); }
+    .process-step:last-child::after { display: none; }
+    .process-step h3 { margin: 0 0 12px; font-size: 17px; }
+    .process-step p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .quote { background: var(--paper); padding: 10px; }
+    .quote__shell { padding: 110px 0; overflow: hidden; border-radius: var(--radius); background: var(--navy); color: var(--white); }
+    .quote__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 90px; align-items: start; }
+    .quote .section-title { font-size: clamp(68px, 7vw, 106px); }
+    .quote__intro { position: sticky; top: 36px; }
+    .quote__intro > p:not(.eyebrow) { max-width: 600px; color: #c6d2dc; }
+    .quote__channels { display: grid; gap: 13px; margin-top: 36px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.22); }
+    .quote__channel { display: flex; align-items: center; gap: 11px; color: #d5dfe7; font-size: 12px; }
+    .quote__channel b { width: 26px; height: 26px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; color: #ff737c; font-size: 11px; }
+    .quote-form { padding: 34px; border-radius: var(--radius); background: var(--white); color: var(--ink); box-shadow: 0 28px 70px rgba(0,0,0,.22); }
+    .quote-form h3 { margin: 0 0 7px; font-size: 22px; }
+    .quote-form > p { margin: 0 0 28px; color: var(--muted); font-size: 12px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+    .field { display: grid; gap: 7px; }
+    .field--full { grid-column: 1 / -1; }
+    .field label { font-size: 11px; font-weight: 800; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 13px;
+      border: 1px solid #aeb9c1;
+      border-radius: 3px;
+      background: #fafbfa;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .field textarea { min-height: 98px; resize: vertical; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,52,63,.12); outline: 0; }
+    .quote-form .btn { width: 100%; margin-top: 22px; }
+    .form-error { display: none; margin: 12px 0 0; color: #a40e18; font-size: 11px; font-weight: 700; }
+    .form-error.is-visible { display: block; }
+
+    .faq { background: var(--paper); }
+    .faq__grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 100px; align-items: start; }
+    .faq .section-title { font-size: clamp(66px, 7vw, 102px); }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 0; border: 0; background: none; color: var(--ink); font-weight: 800; text-align: left; cursor: pointer; }
+    .faq-item button span:last-child { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: 20px; transition: transform 180ms ease; }
+    .faq-item button[aria-expanded="true"] span:last-child { transform: rotate(45deg); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 240ms ease; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { margin: 0; padding: 0 50px 24px 0; color: var(--muted); font-size: 14px; }
+    .faq-item button[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+
+    .final-cta { padding: 125px 0; overflow: hidden; background: var(--red); color: var(--white); text-align: center; }
+    .final-cta h2 { max-width: 1040px; margin: 0 auto; font-family: "Galgo", sans-serif; font-size: clamp(86px, 11vw, 154px); line-height: .79; text-transform: uppercase; }
+    .final-cta h2 span { color: var(--navy); }
+    .final-cta p { max-width: 600px; margin: 28px auto; font-size: 17px; }
+
+    .footer { padding: 68px 0 24px; background: #041426; color: var(--white); }
+    .footer__grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 62px; }
+    .footer__brand img { width: 210px; }
+    .footer__brand p { max-width: 330px; margin: 22px 0 0; color: #9fb0bd; font-size: 12px; }
+    .footer h3 { margin: 0 0 15px; color: #ff737c; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .footer p,
+    .footer a { color: #c5d0d9; font-size: 12px; text-decoration: none; }
+    .footer a:hover { color: var(--white); }
+    .footer__bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 58px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.16); color: #8295a5; font-size: 10px; }
+
+    .wa-float {
+      position: fixed;
+      z-index: 50;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: #20bd66;
+      color: var(--white);
+      box-shadow: 0 14px 32px rgba(7,30,56,.28);
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .lead-gate {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(4,16,30,.78);
+      backdrop-filter: blur(10px);
+    }
+    .lead-gate.is-open { display: grid; }
+    .lead-gate__dialog { position: relative; width: min(620px, 100%); max-height: min(760px, calc(100svh - 36px)); overflow: auto; padding: 38px; border-radius: var(--radius); background: var(--white); box-shadow: 0 34px 100px rgba(0,0,0,.38); }
+    .lead-gate__close { position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); font-size: 22px; cursor: pointer; }
+    .lead-gate h2 { max-width: 500px; margin: 0 48px 8px 0; font-family: "Galgo", sans-serif; font-size: 54px; line-height: .92; text-transform: uppercase; }
+    .lead-gate__intro { margin: 0 0 25px; color: var(--muted); font-size: 12px; }
+    .lead-gate .btn { width: 100%; margin-top: 20px; }
+
+    @media (max-width: 1100px) {
+      .container { width: min(var(--max), calc(100% - 44px)); }
+      .section { padding: 94px 0; }
+      .hero { height: 780px; }
+      .hero__content { width: calc(100% - 380px); }
+      .hero__title { font-size: clamp(120px, 16vw, 175px); }
+      .hero__marker { grid-template-columns: 1fr; gap: 11px; }
+      .hero__marker div { min-width: 150px; }
+      .proof-rail__inner { grid-template-columns: repeat(4, 1fr); }
+      .proof-rail__label { grid-column: 1 / -1; min-height: 50px; padding: 15px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .criteria__grid,
+      .heritage__grid { gap: 54px; }
+      .solutions__head,
+      .capability__head,
+      .process__head { gap: 50px; }
+      .solutions__list { grid-template-columns: repeat(2, 1fr); }
+      .capability-item { padding-inline: 20px; }
+      .quote__grid { gap: 54px; }
+      .faq__grid { gap: 58px; }
+    }
+
+    @media (max-width: 820px) {
+      .container { width: min(var(--max), calc(100% - 32px)); }
+      .nav {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 24px;
+        padding: 100px 34px 50px;
+        background: var(--navy);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease, visibility 200ms ease;
+      }
+      .nav.is-open { z-index: 9; opacity: 1; visibility: visible; }
+      .nav > a:not(.btn) { font-family: "Galgo", sans-serif; font-size: 48px; line-height: .85; text-transform: uppercase; }
+      .nav .btn { width: 100%; margin-top: 12px; }
+      .menu-toggle { position: relative; z-index: 12; display: grid; }
+      .hero { min-height: 720px; height: calc(100svh - 20px); max-height: 880px; }
+      .hero__image { object-position: 52% center; }
+      .hero::before { background: linear-gradient(0deg, rgba(4,18,34,.98) 0%, rgba(4,18,34,.88) 43%, rgba(4,18,34,.28) 76%, rgba(4,18,34,.7) 100%); }
+      .hero__content { left: 20px; right: 20px; bottom: 138px; width: auto; }
+      .hero__title { font-size: clamp(112px, 26vw, 166px); }
+      .hero__title span { max-width: 460px; margin-top: 26px; font-size: 18px; }
+      .hero__marker { display: none; }
+      .hero__action { left: 20px; right: 20px; bottom: 22px; width: auto; display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; align-items: center; padding: 16px; }
+      .hero__action strong { margin: 0; }
+      .hero__action p { margin: 2px 0 0; }
+      .hero__action .btn { grid-column: 2; grid-row: 1 / 3; width: auto; }
+      .hero__action .microcopy { display: none; }
+      .scroll-cue { display: none; }
+      .proof-rail__inner { grid-template-columns: 1fr 1fr; }
+      .proof-chip:nth-last-child(2) { border-bottom: 0; }
+      .proof-chip { min-height: 84px; border-bottom: 1px solid var(--line); }
+      .proof-chip:nth-child(odd) { border-right: 0; }
+      .criteria__grid,
+      .solutions__head,
+      .heritage__grid,
+      .capability__head,
+      .process__head,
+      .quote__grid,
+      .faq__grid { grid-template-columns: 1fr; }
+      .criteria__grid { gap: 55px; }
+      .solutions { padding-top: 94px; }
+      .solutions__head { gap: 18px; margin-bottom: 52px; }
+      .application__grid { grid-template-columns: 1fr; }
+      .application-card__copy { min-height: 0; }
+      .heritage__grid { gap: 68px; }
+      .heritage__visual { min-height: 500px; order: 2; }
+      .capability-grid { grid-template-columns: 1fr 1fr; }
+      .capability-item:nth-child(2) { border-right: 0; }
+      .capability-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(2) { border-right: 1px solid var(--line); }
+      .process-step:nth-child(-n+2) { border-bottom: 0; }
+      .quote__intro { position: static; }
+      .quote__grid { gap: 48px; }
+      .faq__grid { gap: 54px; }
+      .footer__grid { grid-template-columns: 1.3fr 1fr 1fr; }
+      .footer__brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .section { padding: 76px 0; }
+      .section-title { font-size: clamp(58px, 19vw, 82px); line-height: .91; }
+      .section-lead { font-size: 16px; }
+      .hero-shell { padding: 0; }
+      .hero { min-height: 680px; height: calc(100svh - 52px); max-height: 820px; border-radius: 0; }
+      .hero__header { height: 72px; }
+      .brand { width: 188px; }
+      .hero__content { bottom: 156px; }
+      .hero__eyebrow { margin-bottom: 18px; font-size: 10px; }
+      .hero__title { font-size: clamp(104px, 31vw, 142px); line-height: .67; }
+      .hero__title span { margin-top: 24px; font-size: 16px; }
+      .hero__action { grid-template-columns: 1fr; bottom: 14px; padding: 14px; }
+      .hero__action p { display: none; }
+      .hero__action .btn { grid-column: 1; grid-row: auto; margin-top: 7px; }
+      .proof-rail__label { font-size: 10px; }
+      .proof-chip { min-height: 96px; padding: 14px 10px; gap: 9px; }
+      .proof-chip__icon { width: 25px; height: 25px; }
+      .proof-chip strong { font-size: 10px; }
+      .proof-chip span { font-size: 8px; }
+      .criterion { grid-template-columns: 36px 1fr; gap: 11px; }
+      .solutions__list { grid-template-columns: 1fr; }
+      .solution-row__body { padding: 22px 19px 24px; }
+      .solution-row h3 { font-size: 42px; }
+      .solution-row p { font-size: 12px; }
+      .solution-row__arrow { width: 38px; height: 38px; }
+      .application { padding: 76px 0; }
+      .application-card__copy { min-height: 0; padding: 26px 22px 28px; }
+      .application-card__copy h3 { font-size: 49px; }
+      .heritage__visual { min-height: 410px; }
+      .heritage__visual img { width: 93%; height: 78%; }
+      .heritage__stamp { width: 126px; height: 126px; }
+      .heritage__stamp strong { font-size: 42px; }
+      .heritage__facts { grid-template-columns: 1fr; }
+      .heritage__fact { padding: 17px 0; border-right: 0; border-bottom: 1px solid rgba(7,30,56,.25); }
+      .heritage__fact:not(:first-child) { padding-left: 0; }
+      .heritage__fact:last-child { border-bottom: 0; }
+      .capability-grid { grid-template-columns: 1fr; margin-top: 52px; }
+      .capability-item { min-height: 210px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .capability-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .capability-item:last-child { border-bottom: 0; }
+      .capability-item h3 { margin-top: 28px; }
+      .process-grid { grid-template-columns: 1fr; margin-top: 52px; }
+      .process-step { min-height: 220px; border-right: 1px solid var(--line); border-bottom: 0; }
+      .process-step:nth-child(-n+2) { border-bottom: 0; }
+      .process-step:last-child { border-bottom: 1px solid var(--line); }
+      .process-step::after { top: auto; right: 50%; bottom: -16px; width: 1px; height: 31px; }
+      .quote { padding: 0; }
+      .quote__shell { padding: 76px 0; border-radius: 0; }
+      .quote .section-title,
+      .faq .section-title { font-size: clamp(58px, 18vw, 78px); }
+      .quote-form { padding: 24px 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field--full { grid-column: 1; }
+      .faq-answer p { padding-right: 18px; }
+      .final-cta { padding: 92px 0; }
+      .final-cta h2 { font-size: clamp(74px, 24vw, 108px); }
+      .footer__grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer__brand { grid-column: auto; }
+      .footer__bottom { align-items: flex-start; flex-direction: column; }
+      .wa-float { display: none; }
+      .lead-gate { padding: 10px; }
+      .lead-gate__dialog { padding: 28px 18px 22px; }
+      .lead-gate h2 { font-size: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero-shell" id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero__image" src="assets/app-01-trafego-leve-v2.webp" alt="Passarela industrial em grade metálica com profissional caminhando" width="1536" height="1024" fetchpriority="high">
+        <header class="container hero__header">
+          <a class="brand" href="#inicio" aria-label="Mafer Grade — início">
+            <img src="assets/mafergrade-logo.png" alt="Mafer Grade" width="258" height="45">
+          </a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span></span><span></span></button>
+          <nav class="nav" id="main-nav" aria-label="Navegação principal">
+            <a href="#solucoes">Soluções</a>
+            <a href="#aplicacoes">Aplicações</a>
+            <a href="#industria">A empresa</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a class="btn btn--red js-wa" href="https://wa.me/5511999085615" data-source="nav">Solicitar análise</a>
+          </nav>
+        </header>
+
+        <div class="hero__marker" aria-label="Aplicações atendidas">
+          <div><strong>Industrial</strong><span>Pisos e passarelas</span></div>
+          <div><strong>Offshore</strong><span>Ambientes severos</span></div>
+          <div><strong>Arquitetônico</strong><span>Função e estética</span></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">Engenharia metálica aplicada ao piso</p>
+          <h1 class="hero__title" id="hero-title">Grades<span>Sob medida para a carga, o ambiente e o seu projeto.</span></h1>
+        </div>
+
+        <div class="hero__action">
+          <strong>Precisa cotar ou especificar?</strong>
+          <p>Envie os dados disponíveis. Nosso time comercial dá sequência pelo WhatsApp.</p>
+          <a class="btn btn--dark js-wa" href="https://wa.me/5511999085615" data-source="hero">Analisar meu projeto</a>
+          <div class="microcopy">Leva cerca de 1 minuto para começar</div>
+        </div>
+        <a class="scroll-cue" href="#provas" aria-label="Continuar para provas"><span>↓</span></a>
+      </section>
+    </div>
+
+    <section class="proof-rail" id="provas" aria-label="Capacidade e conformidade">
+      <div class="container proof-rail__inner">
+        <div class="proof-rail__label">Base para especificar com segurança</div>
+        <div class="proof-chip"><b class="proof-chip__icon">✓</b><div><strong>Empresa brasileira</strong><span>Produção nacional</span></div></div>
+        <div class="proof-chip"><b class="proof-chip__icon">✓</b><div><strong>Conforme o projeto</strong><span>Dimensões e cargas</span></div></div>
+        <div class="proof-chip"><b class="proof-chip__icon">✓</b><div><strong>Proteção anticorrosiva</strong><span>Aplicação e ambiente</span></div></div>
+        <div class="proof-chip"><b class="proof-chip__icon">✓</b><div><strong>Guarulhos, SP</strong><span>Atendimento técnico</span></div></div>
+      </div>
+    </section>
+
+    <section class="section criteria" id="criterios">
+      <div class="container criteria__grid">
+        <div class="criteria__intro">
+          <p class="eyebrow">A grade certa começa no projeto</p>
+          <h2 class="section-title">Quatro decisões definem o desempenho do piso.</h2>
+          <p class="section-lead">Não existe uma única grade para toda aplicação. A especificação precisa combinar esforços, geometria, ambiente e acabamento.</p>
+        </div>
+        <div class="criteria__list" aria-label="Critérios de especificação">
+          <article class="criterion"><div><h3>Carga e tipo de tráfego</h3><p>Pedestres, carrinhos, empilhadeiras, veículos ou esforços concentrados.</p></div></article>
+          <article class="criterion"><div><h3>Vão livre e dimensões</h3><p>Medidas da estrutura, direção da barra portante e pontos de apoio.</p></div></article>
+          <article class="criterion"><div><h3>Ambiente de exposição</h3><p>Uso interno, externo, industrial, marítimo ou sujeito a agentes corrosivos.</p></div></article>
+          <article class="criterion"><div><h3>Acabamento e fixação</h3><p>Proteção superficial, aderência, recortes e condições de montagem.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions" id="solucoes" aria-labelledby="solutions-title">
+      <div class="container">
+        <div class="solutions__head">
+          <div><p class="eyebrow">Portfólio Mafer Grade</p><h2 class="section-title" id="solutions-title">Uma estrutura para cada condição de uso.</h2></div>
+          <p class="section-lead">Do acesso de pedestres às cargas elevadas, desenvolvemos grades, degraus e cercamentos para diferentes desafios industriais e construtivos.</p>
+        </div>
+        <div class="solutions__list">
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-light">
+            <img class="solution-row__image" src="assets/app-01-trafego-leve-v2.webp" alt="Passarela industrial para circulação de pedestres em grade metálica" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">01</span><h3>Tráfego leve</h3><span class="solution-row__arrow">↗</span><p>Grades para circulação de pedestres, áreas técnicas, plataformas e passarelas.</p></div>
+          </a>
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-heavy">
+            <img class="solution-row__image" src="assets/app-02-trafego-pesado-v2.webp" alt="Empilhadeira sobre piso reforçado em grade metálica" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">02</span><h3>Tráfego pesado</h3><span class="solution-row__arrow">↗</span><p>Soluções dimensionadas para veículos, empilhadeiras e cargas elevadas.</p></div>
+          </a>
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-offshore">
+            <img class="solution-row__image" src="assets/app-03-offshore-v2.webp" alt="Passarela offshore em grade metálica galvanizada" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">03</span><h3>Offshore</h3><span class="solution-row__arrow">↗</span><p>Grades para ambientes severos, com atenção à resistência e à proteção anticorrosiva.</p></div>
+          </a>
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-steps">
+            <img class="solution-row__image" src="assets/app-04-degraus-v2.webp" alt="Degraus industriais antiderrapantes em grade metálica" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">04</span><h3>Degraus</h3><span class="solution-row__arrow">↗</span><p>Componentes metálicos para escadas industriais, acessos e estruturas técnicas.</p></div>
+          </a>
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-fencing">
+            <img class="solution-row__image" src="assets/app-05-cercamentos-v2.webp" alt="Cercamento industrial metálico em centro logístico" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">05</span><h3>Cercamentos</h3><span class="solution-row__arrow">↗</span><p>Gradis para proteção, fechamento perimetral, contenção e demarcação.</p></div>
+          </a>
+          <a class="solution-row js-wa" href="https://wa.me/5511999085615" data-source="solution-architecture">
+            <img class="solution-row__image" src="assets/app-06-arquitetura-v2.webp" alt="Mezanino arquitetônico com guarda-corpo em grade metálica" width="1536" height="1024" loading="lazy">
+            <div class="solution-row__body"><span class="solution-row__index">06</span><h3>Arquitetônico</h3><span class="solution-row__arrow">↗</span><p>Grades personalizadas para fachadas, mezaninos, passarelas e soluções visuais em aço.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="application" id="aplicacoes" aria-labelledby="application-title">
+      <div class="container">
+        <p class="eyebrow">Aplicações críticas</p>
+        <h2 class="section-title" id="application-title">O mesmo aço. Exigências completamente diferentes.</h2>
+        <p class="section-lead">Cada ambiente muda a conversa sobre carga, corrosão, acabamento, acesso e manutenção.</p>
+        <div class="application__grid" style="margin-top: 66px;">
+          <article class="application-card">
+            <img src="assets/app-03-offshore-v2.webp" alt="Passarela metálica galvanizada em plataforma offshore" width="1536" height="1024" loading="lazy">
+            <div class="application-card__copy"><span>Ambientes severos</span><h3>Offshore e indústria</h3><p>Especificação orientada à exposição, ao tráfego e às condições de manutenção da estrutura.</p></div>
+          </article>
+          <article class="application-card">
+            <img src="assets/app-06-arquitetura-v2.webp" alt="Mezanino comercial com guarda-corpo em grade metálica" width="1536" height="1024" loading="lazy">
+            <div class="application-card__copy"><span>Integração ao espaço</span><h3>Arquitetura e circulação</h3><p>Geometria, acabamento e transparência para conciliar função estrutural e expressão visual.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section heritage" id="industria" aria-labelledby="heritage-title">
+      <div class="container heritage__grid">
+        <div class="heritage__visual">
+          <div class="heritage__stamp"><strong>100%</strong><span>Empresa nacional</span></div>
+          <img src="assets/factory.webp" alt="Vista aérea da unidade industrial em Guarulhos" width="910" height="607" loading="lazy">
+        </div>
+        <div class="heritage__story">
+          <p class="eyebrow">A indústria por trás da grade</p>
+          <h2 class="section-title" id="heritage-title">Tecnologia, aço e pessoas em uma mesma estrutura.</h2>
+          <p class="section-lead">A Mafer Grade é uma empresa brasileira dedicada à fabricação de grades e soluções metálicas para a indústria, construção, infraestrutura e arquitetura.</p>
+          <div class="heritage__facts">
+            <div class="heritage__fact"><strong>Produção em Guarulhos</strong><span>Unidade localizada no polo industrial de Guarulhos, São Paulo.</span></div>
+            <div class="heritage__fact"><strong>Aplicações diversas</strong><span>Do piso técnico ao projeto arquitetônico e ao ambiente offshore.</span></div>
+            <div class="heritage__fact"><strong>Engenharia aplicada</strong><span>A solução começa pela leitura da necessidade de cada projeto.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capability" id="diferenciais">
+      <div class="container">
+        <div class="capability__head">
+          <div><p class="eyebrow">Do desenho à entrega</p><h2 class="section-title">Você recebe uma solução pensada para a aplicação.</h2></div>
+          <p class="section-lead">Nosso atendimento organiza as informações do projeto para definir a configuração, o acabamento e o fornecimento adequados.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-item"><div class="capability-item__icon">01</div><h3>Análise da aplicação</h3><p>Entendemos tráfego, cargas, vãos, ambiente e condições de uso.</p></article>
+          <article class="capability-item"><div class="capability-item__icon">02</div><h3>Configuração sob medida</h3><p>Organizamos dimensões, malha, barras, recortes e pontos de apoio.</p></article>
+          <article class="capability-item"><div class="capability-item__icon">03</div><h3>Acabamento compatível</h3><p>A proteção superficial é considerada conforme exposição e projeto.</p></article>
+          <article class="capability-item"><div class="capability-item__icon">04</div><h3>Suporte comercial</h3><p>Acompanhamos a cotação e alinhamos as informações necessárias ao fornecimento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="processo">
+      <div class="container">
+        <div class="process__head">
+          <div><p class="eyebrow">Como seu projeto avança</p><h2 class="section-title">Envie o que você tem. Nós organizamos o próximo passo.</h2></div>
+          <p class="section-lead">Uma foto, um desenho, uma lista de medidas ou um memorial já ajudam a começar a conversa.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><h3>Compartilhe a necessidade</h3><p>Informe aplicação, medidas, quantidade, localização e prazo esperado.</p></article>
+          <article class="process-step"><h3>Analisamos os critérios</h3><p>Verificamos carga, geometria, exposição, acabamento e dados pendentes.</p></article>
+          <article class="process-step"><h3>Definimos a solução</h3><p>Alinhamos a configuração e preparamos a composição para cotação.</p></article>
+          <article class="process-step"><h3>Produzimos e acompanhamos</h3><p>Após a aprovação, programamos o pedido e acompanhamos o fornecimento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="orcamento">
+      <div class="quote__shell">
+        <div class="container quote__grid">
+          <div class="quote__intro">
+            <p class="eyebrow">Solicite uma análise</p>
+            <h2 class="section-title">Vamos entender a grade que o seu projeto pede.</h2>
+            <p>Preencha os dados essenciais. Ao enviar, você segue para o WhatsApp com a mensagem organizada para o nosso time comercial.</p>
+            <div class="quote__channels">
+              <span class="quote__channel"><b>W</b> WhatsApp: +55 11 99908-5615</span>
+              <span class="quote__channel"><b>@</b> aline.marcal@jmafer.com.br</span>
+              <span class="quote__channel"><b>⌖</b> R. João Alfredo, 322 — Guarulhos/SP</span>
+            </div>
+          </div>
+          <form class="quote-form" id="quote-form" novalidate>
+            <h3>Conte o que seu projeto precisa</h3>
+            <p>Você não precisa ter todas as respostas agora.</p>
+            <div class="form-grid">
+              <div class="field field--full"><label for="project-stage">Em que etapa está sua demanda?</label><select id="project-stage" name="stage" required><option value="">Selecione uma opção</option><option>Cotação imediata</option><option>Especificação ou projeto</option><option>Licitação ou concorrência</option><option>Reposição ou manutenção</option><option>Pesquisa inicial</option></select></div>
+              <div class="field"><label for="name">Seu nome</label><input id="name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="company">Empresa</label><input id="company" name="company" autocomplete="organization"></div>
+              <div class="field"><label for="phone">WhatsApp com DDD</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" required></div>
+              <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field field--full"><label for="application">Qual é a aplicação?</label><select id="application" name="application" required><option value="">Selecione uma opção</option><option>Grade para tráfego leve</option><option>Grade para tráfego pesado</option><option>Grade offshore</option><option>Degraus metálicos</option><option>Cercamento ou demarcação</option><option>Projeto arquitetônico</option><option>Outro / preciso de orientação</option></select></div>
+              <div class="field field--full"><label for="details">Medidas, quantidade, carga ou prazo — o que você já souber</label><textarea id="details" name="details"></textarea></div>
+            </div>
+            <p class="form-error" id="quote-error" role="alert">Revise os campos obrigatórios e informe um WhatsApp com DDD.</p>
+            <button class="btn btn--red" type="submit">Continuar no WhatsApp</button>
+            <div class="microcopy">Seus dados serão usados somente para dar continuidade a este atendimento.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="duvidas">
+      <div class="container faq__grid">
+        <div><p class="eyebrow">Dúvidas frequentes</p><h2 class="section-title">Informações para começar a especificar.</h2></div>
+        <div class="faq-list">
+          <article class="faq-item"><button type="button" aria-expanded="true"><span>Que informações preciso enviar para cotar?</span><span>+</span></button><div class="faq-answer"><div><p>Aplicação, medidas, quantidade, local de entrega e prazo já permitem iniciar. Se houver desenho, foto, memorial, carga prevista ou medida do vão livre, envie também.</p></div></div></article>
+          <article class="faq-item"><button type="button" aria-expanded="false"><span>Como escolher entre tráfego leve e pesado?</span><span>+</span></button><div class="faq-answer"><div><p>A escolha depende do tipo de tráfego, cargas distribuídas e concentradas, direção das barras portantes e distância entre apoios. Nosso time ajuda a organizar esses dados antes da definição.</p></div></div></article>
+          <article class="faq-item"><button type="button" aria-expanded="false"><span>As grades podem ser fabricadas sob medida?</span><span>+</span></button><div class="faq-answer"><div><p>Sim. A configuração pode considerar dimensões, malha, recortes, contornos e condições específicas de instalação, sempre a partir dos requisitos do projeto.</p></div></div></article>
+          <article class="faq-item"><button type="button" aria-expanded="false"><span>Vocês atendem aplicações offshore e ambientes corrosivos?</span><span>+</span></button><div class="faq-answer"><div><p>A Mafer Grade possui soluções para aplicações offshore e ambientes severos. A indicação precisa considerar exposição, material, proteção superficial e plano de manutenção.</p></div></div></article>
+          <article class="faq-item"><button type="button" aria-expanded="false"><span>É possível pedir degraus e gradis junto com as grades de piso?</span><span>+</span></button><div class="faq-answer"><div><p>O portfólio inclui grades de piso, degraus, cercamentos e soluções de contenção. Informe o conjunto desejado para avaliarmos a composição do fornecimento.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Seu projeto começa pela <span>grade certa.</span></h2>
+        <p>Envie a aplicação, as medidas e o que você já souber. Nós ajudamos a organizar o próximo passo.</p>
+        <a class="btn btn--dark js-wa" href="https://wa.me/5511999085615" data-source="final-cta">Solicitar análise técnica</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="assets/mafergrade-logo.png" alt="Mafer Grade" width="258" height="45"><p>Grades e soluções metálicas para indústria, construção, infraestrutura, offshore e arquitetura.</p></div>
+        <div><h3>Navegação</h3><p><a href="#solucoes">Soluções</a><br><a href="#aplicacoes">Aplicações</a><br><a href="#industria">A empresa</a><br><a href="#duvidas">Dúvidas</a></p></div>
+        <div><h3>Contato</h3><p><a href="tel:+5511999085615">+55 11 99908-5615</a><br><a href="mailto:aline.marcal@jmafer.com.br">aline.marcal@jmafer.com.br</a></p></div>
+        <div><h3>Localização</h3><p>R. João Alfredo, 322<br>Cidade Industrial Satélite<br>Guarulhos/SP — 07224-120</p></div>
+      </div>
+      <div class="footer__bottom"><span id="copyright"></span><span>Uma empresa do Grupo JMafer.</span></div>
+    </div>
+  </footer>
+
+  <button class="wa-float js-wa" type="button" data-source="floating" aria-label="Falar com a Mafer Grade pelo WhatsApp">W</button>
+
+  <div class="lead-gate" id="lead-gate" aria-hidden="true">
+    <div class="lead-gate__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-gate-title">
+      <button class="lead-gate__close" type="button" aria-label="Fechar">×</button>
+      <p class="eyebrow">Antes de abrir o WhatsApp</p>
+      <h2 id="lead-gate-title">Conte em que etapa está sua demanda.</h2>
+      <p class="lead-gate__intro">Estas informações deixam a primeira conversa mais objetiva.</p>
+      <form id="lead-gate-form" novalidate>
+        <div class="form-grid">
+          <div class="field field--full"><label for="gate-stage">Etapa da demanda</label><select id="gate-stage" name="stage" required><option value="">Selecione uma opção</option><option>Cotação imediata</option><option>Especificação ou projeto</option><option>Licitação ou concorrência</option><option>Reposição ou manutenção</option><option>Pesquisa inicial</option></select></div>
+          <div class="field"><label for="gate-name">Seu nome</label><input id="gate-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="gate-phone">WhatsApp com DDD</label><input id="gate-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" required></div>
+          <div class="field field--full"><label for="gate-email">E-mail</label><input id="gate-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <p class="form-error" id="gate-error" role="alert">Preencha os campos e informe um WhatsApp com DDD.</p>
+        <button class="btn btn--red" type="submit">Continuar no WhatsApp</button>
+        <div class="microcopy">Usaremos seus dados somente para dar contexto a esta conversa.</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const PHONE = "5511999085615";
+    const dataLayer = window.dataLayer = window.dataLayer || [];
+    const track = (event, details = {}) => dataLayer.push({ event, page_segment: "grades", ...details });
+    const clean = value => (value || "").trim();
+    const digits = value => value.replace(/\D/g, "");
+    const validPhone = value => {
+      const number = digits(value);
+      return number.length === 10 || number.length === 11 || number.length === 12 || number.length === 13;
+    };
+    const utmContext = () => {
+      const params = new URLSearchParams(location.search);
+      return ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"]
+        .map(key => params.get(key) ? `${key}: ${params.get(key)}` : "")
+        .filter(Boolean)
+        .join(" | ");
+    };
+    const openWhatsapp = (message, formType) => {
+      track("whatsapp_redirect", { form_type: formType });
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    };
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    menuToggle.addEventListener("click", () => {
+      const open = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!open));
+      menuToggle.setAttribute("aria-label", open ? "Abrir menu" : "Fechar menu");
+      nav.classList.toggle("is-open", !open);
+      document.body.classList.toggle("menu-open", !open);
+    });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }));
+
+    document.querySelectorAll(".faq-item button").forEach(button => {
+      button.addEventListener("click", () => {
+        const willOpen = button.getAttribute("aria-expanded") !== "true";
+        document.querySelectorAll(".faq-item button").forEach(item => item.setAttribute("aria-expanded", "false"));
+        button.setAttribute("aria-expanded", String(willOpen));
+      });
+    });
+
+    const gate = document.getElementById("lead-gate");
+    const gateForm = document.getElementById("lead-gate-form");
+    const gateClose = gate.querySelector(".lead-gate__close");
+    let gateSource = "direct";
+    let previousFocus = null;
+    const openGate = source => {
+      gateSource = source;
+      previousFocus = document.activeElement;
+      gate.classList.add("is-open");
+      gate.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      document.getElementById("gate-stage").focus();
+      track("lead_gate_open", { cta_source: source });
+    };
+    const closeGate = () => {
+      gate.classList.remove("is-open");
+      gate.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      track("lead_gate_close", { cta_source: gateSource });
+      if (previousFocus) previousFocus.focus();
+    };
+    document.querySelectorAll(".js-wa").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        openGate(link.dataset.source || "unknown");
+      });
+    });
+    gateClose.addEventListener("click", closeGate);
+    gate.addEventListener("click", event => { if (event.target === gate) closeGate(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && gate.classList.contains("is-open")) closeGate(); });
+    gateForm.addEventListener("input", () => track("lead_gate_start", { cta_source: gateSource } ), { once: true });
+    gateForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const form = new FormData(gateForm);
+      const error = document.getElementById("gate-error");
+      if (!gateForm.checkValidity() || !validPhone(clean(form.get("phone")))) {
+        error.classList.add("is-visible");
+        gateForm.reportValidity();
+        track("lead_gate_validation_error", { cta_source: gateSource });
+        return;
+      }
+      error.classList.remove("is-visible");
+      const context = utmContext();
+      const message = [
+        "Olá! Vim pela landing page da Mafer Grade e gostaria de conversar sobre um projeto.",
+        `Nome: ${clean(form.get("name"))}`,
+        `WhatsApp: ${clean(form.get("phone"))}`,
+        `E-mail: ${clean(form.get("email"))}`,
+        `Etapa: ${clean(form.get("stage"))}`,
+        `Interesse na página: ${gateSource}`,
+        context ? `Origem: ${context}` : ""
+      ].filter(Boolean).join("\n");
+      track("pre_redirect_form_submit", { cta_source: gateSource, demand_stage: clean(form.get("stage")) });
+      openWhatsapp(message, "lead_gate");
+    });
+
+    const quoteForm = document.getElementById("quote-form");
+    quoteForm.addEventListener("input", () => track("quote_form_start"), { once: true });
+    quoteForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const form = new FormData(quoteForm);
+      const error = document.getElementById("quote-error");
+      if (!quoteForm.checkValidity() || !validPhone(clean(form.get("phone")))) {
+        error.classList.add("is-visible");
+        quoteForm.reportValidity();
+        track("quote_form_validation_error");
+        return;
+      }
+      error.classList.remove("is-visible");
+      const context = utmContext();
+      const message = [
+        "Olá! Vim pela landing page da Mafer Grade e gostaria de solicitar uma análise.",
+        `Etapa: ${clean(form.get("stage"))}`,
+        `Nome: ${clean(form.get("name"))}`,
+        clean(form.get("company")) ? `Empresa: ${clean(form.get("company"))}` : "",
+        `WhatsApp: ${clean(form.get("phone"))}`,
+        `E-mail: ${clean(form.get("email"))}`,
+        `Aplicação: ${clean(form.get("application"))}`,
+        clean(form.get("details")) ? `Informações do projeto: ${clean(form.get("details"))}` : "",
+        context ? `Origem: ${context}` : ""
+      ].filter(Boolean).join("\n");
+      track("lead_form_submit", { demand_stage: clean(form.get("stage")), application: clean(form.get("application")) });
+      openWhatsapp(message, "quote_form");
+    });
+
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => input.addEventListener("input", () => {
+      let value = digits(input.value).slice(0, 11);
+      if (value.length > 6) value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+      else if (value.length > 2) value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+      else if (value.length) value = `(${value}`;
+      input.value = value;
+    }));
+
+    document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} Mafer Grade. Todos os direitos reservados.`;
+  </script>
+</body>
+</html>
