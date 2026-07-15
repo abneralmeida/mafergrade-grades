@@ -4,7 +4,9 @@ Landing page comercial para grades metálicas de tráfego leve e pesado, offshor
 
 ## Publicação
 
-Site estático preparado para GitHub Pages.
+- Site: https://abneralmeida.github.io/mafergrade-grades/
+- Repositório: https://github.com/abneralmeida/mafergrade-grades
+- Hospedagem: GitHub Pages, branch `main`, diretório raiz.
 
 ## Observação sobre as imagens
 
