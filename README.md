@@ -2,6 +2,13 @@
 
 Landing page comercial focada em gradis e cercamentos para obras públicas e privadas. Grades de piso, degraus, defensas, offshore e aplicações arquitetônicas aparecem como portfólio complementar.
 
+## Versão V4
+
+- hero reposicionada como “Soluções metálicas para obras públicas e privadas”;
+- arquitetura destacada para fachadas, mezaninos, passarelas e obras privadas;
+- SEO técnico com canonical, metadados sociais e dados estruturados;
+- imagens responsivas em WebP com variantes menores, lazy loading e dimensões explícitas.
+
 ## Publicação
 
 - Site: https://abneralmeida.github.io/mafergrade-grades/
