@@ -972,18 +972,91 @@
 
   <script>
     const PHONE = "5511999085615";
+    const LEADS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxt6zmmdfmiVsXuPH83IjtjFtedABd3oYV9mC44PGaDVVvS5bDTf6aLzqvhvqmlN2TD0w/exec";
     const dataLayer = window.dataLayer = window.dataLayer || [];
-    const track = (event, details = {}) => dataLayer.push({ event, page_segment: "gradis_cercamentos", ...details });
+    const track = (event, details = {}) => {
+      const payload = { event, page_segment: "gradis_cercamentos", brand: "mafer_grade", ...details };
+      dataLayer.push(payload);
+      if (typeof window.fbq === "function") window.fbq("trackCustom", event, payload);
+    };
+
+    const loadMeasurement = (() => {
+      let loaded = false;
+      return () => {
+        if (loaded) return;
+        loaded = true;
+
+        window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", "GT-NSLWH83J");
+        window.gtag("config", "AW-386301164");
+
+        const googleTag = document.createElement("script");
+        googleTag.async = true;
+        googleTag.src = "https://www.googletagmanager.com/gtag/js?id=GT-NSLWH83J";
+        document.head.appendChild(googleTag);
+
+        dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+        const tagManager = document.createElement("script");
+        tagManager.async = true;
+        tagManager.src = "https://www.googletagmanager.com/gtm.js?id=GTM-K4K4H8QQ";
+        document.head.appendChild(tagManager);
+      };
+    })();
+
+    ["pointerdown", "keydown"].forEach(eventName => {
+      window.addEventListener(eventName, loadMeasurement, { once: true, capture: true, passive: true });
+    });
+    window.addEventListener("load", () => window.setTimeout(loadMeasurement, 8000), { once: true });
+
     const clean = value => (value || "").trim();
     const digits = value => value.replace(/\D/g, "");
     const validPhone = value => {
       const number = digits(value);
       return number.length === 10 || number.length === 11 || number.length === 12 || number.length === 13;
     };
+    const getUrlParam = name => new URLSearchParams(location.search).get(name) || "";
+    const setCookie = (name, value, days) => {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Lax`;
+    };
+    const getCookie = name => {
+      const match = document.cookie.match(`(?:^|;\\s*)${name}=([^;]*)`);
+      return match ? decodeURIComponent(match[1]) : "";
+    };
+    ["gclid", "gbraid", "wbraid"].forEach(key => {
+      const value = getUrlParam(key);
+      if (value) setCookie(key, value, 90);
+    });
+    const sendLead = payload => {
+      try {
+        fetch(LEADS_WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          keepalive: true,
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            website: "",
+            origem: "Mafer Grade",
+            pagina: window.location.pathname,
+            landing_url: window.location.href,
+            gclid: getCookie("gclid"),
+            gbraid: getCookie("gbraid"),
+            wbraid: getCookie("wbraid"),
+            utm_source: getUrlParam("utm_source"),
+            utm_medium: getUrlParam("utm_medium"),
+            utm_campaign: getUrlParam("utm_campaign"),
+            utm_content: getUrlParam("utm_content"),
+            utm_term: getUrlParam("utm_term"),
+            ...payload
+          })
+        });
+      } catch (error) {}
+    };
     const utmContext = () => {
       const params = new URLSearchParams(location.search);
-      return ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"]
-        .map(key => params.get(key) ? `${key}: ${params.get(key)}` : "")
+      return ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "gbraid", "wbraid"]
+        .map(key => (params.get(key) || getCookie(key)) ? `${key}: ${params.get(key) || getCookie(key)}` : "")
         .filter(Boolean)
         .join(" | ");
     };
@@ -1068,6 +1141,15 @@
         context ? `Origem: ${context}` : ""
       ].filter(Boolean).join("\n");
       track("pre_redirect_form_submit", { cta_source: gateSource, demand_stage: clean(form.get("stage")) });
+      sendLead({
+        formulario: "mafergrade_lead_gate",
+        nome: clean(form.get("name")),
+        whatsapp: clean(form.get("phone")),
+        email: clean(form.get("email")),
+        produto: "Soluções metálicas Mafer Grade",
+        etapa: clean(form.get("stage")),
+        cta: gateSource
+      });
       openWhatsapp(message, "lead_gate");
     });
 
@@ -1097,6 +1179,17 @@
         context ? `Origem: ${context}` : ""
       ].filter(Boolean).join("\n");
       track("lead_form_submit", { demand_stage: clean(form.get("stage")), application: clean(form.get("application")) });
+      sendLead({
+        formulario: "mafergrade_full_form",
+        nome: clean(form.get("name")),
+        whatsapp: clean(form.get("phone")),
+        email: clean(form.get("email")),
+        empresa: clean(form.get("company")),
+        produto: clean(form.get("application")),
+        etapa: clean(form.get("stage")),
+        detalhes: clean(form.get("details")),
+        cta: "full_form"
+      });
       openWhatsapp(message, "quote_form");
     });
 
