@@ -1,6 +1,6 @@
-# Mafer Grade — Grades Metálicas
+# Mafer Grade — Gradis e Cercamentos
 
-Landing page comercial para grades metálicas de tráfego leve e pesado, offshore, degraus, cercamentos e aplicações arquitetônicas.
+Landing page comercial focada em gradis e cercamentos para obras públicas e privadas. Grades de piso, degraus, defensas, offshore e aplicações arquitetônicas aparecem como portfólio complementar.
 
 ## Publicação
 
@@ -10,4 +10,4 @@ Landing page comercial para grades metálicas de tráfego leve e pesado, offshor
 
 ## Observação sobre as imagens
 
-As seis cenas de aplicação foram geradas com IA a partir de referências visuais da Mafer Grade. A geometria dos produtos e as condições de instalação devem ser validadas pela engenharia antes do uso como representação de produto ou obra executada.
+As cenas de aplicação foram geradas com IA a partir da direção visual da Mafer Grade. A geometria dos gradis, postes, portões, fixações, grades e condições de instalação deve ser validada pela engenharia antes do uso como representação de produto ou obra executada.
