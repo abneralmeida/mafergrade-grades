@@ -12,6 +12,7 @@ Landing page comercial focada em gradis e cercamentos para obras públicas e pri
 ## Integração comercial e mensuração
 
 - pré-formulário e formulário completo registram os leads na aba `Mafer Grade` da mesma planilha da landing page JMafer, sem expor credenciais no site público;
+- `generate_lead` só é emitido após a resposta `ok: true` do integrador; falhas não geram conversão nem abrem o WhatsApp;
 - UTMs, `gclid`, `gbraid` e `wbraid` acompanham o registro e a mensagem do WhatsApp;
 - Google Tag `GT-NSLWH83J`, Google Ads `AW-386301164` e GTM `GTM-K4K4H8QQ` são carregados de forma adiada para preservar o desempenho;
 - o ID do Meta Pixel ainda precisa ser informado para ativar o código-base da conta.
