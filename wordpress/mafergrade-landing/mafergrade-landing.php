@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mafer Grade - Landing Page de Soluções em Aço
  * Description: Publica a landing page de soluções metálicas em uma página isolada do tema institucional.
- * Version: 2.0.4
+ * Version: 2.0.5
  * Author: Grupo Mafer
  * License: GPL-2.0-or-later
  * Text Domain: mafergrade-landing
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'MAFERGRADE_LANDING_VERSION', '2.0.4' );
+define( 'MAFERGRADE_LANDING_VERSION', '2.0.5' );
 define( 'MAFERGRADE_LANDING_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MAFERGRADE_LANDING_URL', plugin_dir_url( __FILE__ ) );
 define( 'MAFERGRADE_LANDING_SLUG', 'gradis-e-cercamentos' );

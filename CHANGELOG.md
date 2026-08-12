@@ -1,5 +1,10 @@
 # Histórico de versões
 
+## 2.0.5 — 2026-08-12
+
+- substitui a referência `ABNT · DIN · ASTM` por `ABNT / NBR` na seção de tubos;
+- remove as menções a DIN e ASTM da página pública.
+
 ## 2.0.4 — 2026-08-12
 
 - adiciona uma segunda dobra exclusiva para a variante de tubos;

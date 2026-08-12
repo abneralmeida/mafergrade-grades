@@ -4,9 +4,9 @@ Backup versionado da landing page oficial da Mafer Grade para gradis, cercamento
 
 ## Versão atual
 
-- versão: `2.0.4`;
+- versão: `2.0.5`;
 - publicação oficial: https://mafergrade.com.br/gradis-e-cercamentos/;
-- tag Git: `v2.0.4`;
+- tag Git: `v2.0.5`;
 - atualização: 12 de agosto de 2026.
 
 ## Conteúdo do repositório
@@ -14,7 +14,7 @@ Backup versionado da landing page oficial da Mafer Grade para gradis, cercamento
 - `index.html`: versão estática da landing para consulta e pré-visualização;
 - `assets/`: imagens e fontes usadas pela página;
 - `wordpress/mafergrade-landing/`: código-fonte do plugin publicado no WordPress;
-- `wordpress/mafergrade-landing-2.0.4.zip`: pacote instalável da versão publicada;
+- `wordpress/mafergrade-landing-2.0.5.zip`: pacote instalável da versão publicada;
 - `automation/lead-capture-apps-script.gs`: código do webhook que envia os contatos para a aba `Mafer Grade` da planilha de leads.
 
 ## Conversão e mensuração
@@ -30,4 +30,4 @@ Backup versionado da landing page oficial da Mafer Grade para gradis, cercamento
 
 ## Publicação
 
-O WordPress usa o pacote em `wordpress/mafergrade-landing-2.0.4.zip`. A versão estática da raiz funciona como backup legível e não substitui o deploy oficial.
+O WordPress usa o pacote em `wordpress/mafergrade-landing-2.0.5.zip`. A versão estática da raiz funciona como backup legível e não substitui o deploy oficial.
