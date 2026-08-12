@@ -1,28 +1,33 @@
-# Mafer Grade — Gradis e Cercamentos
+# Mafer Grade — Landing de conversão
 
-Landing page comercial focada em gradis e cercamentos para obras públicas e privadas. Grades de piso, degraus, defensas, offshore e aplicações arquitetônicas aparecem como portfólio complementar.
+Backup versionado da landing page oficial da Mafer Grade para gradis, cercamentos, grades industriais e tubos de aço.
 
-## Versão V4
+## Versão atual
 
-- hero reposicionada como “Soluções metálicas para obras públicas e privadas”;
-- arquitetura destacada para fachadas, mezaninos, passarelas e obras privadas;
-- SEO técnico com canonical, metadados sociais e dados estruturados;
-- imagens responsivas em WebP com variantes menores, lazy loading e dimensões explícitas.
+- versão: `2.0.3`;
+- publicação oficial: https://mafergrade.com.br/gradis-e-cercamentos/;
+- tag Git: `v2.0.3`;
+- atualização: 12 de agosto de 2026.
 
-## Integração comercial e mensuração
+## Conteúdo do repositório
 
-- pré-formulário e formulário completo registram os leads na aba `Mafer Grade` da mesma planilha da landing page JMafer, sem expor credenciais no site público;
-- `generate_lead` só é emitido após a resposta `ok: true` do integrador; falhas não geram conversão nem abrem o WhatsApp;
-- UTMs, `gclid`, `gbraid` e `wbraid` acompanham o registro e a mensagem do WhatsApp;
-- Google Tag `GT-NSLWH83J`, Google Ads `AW-386301164` e GTM `GTM-K4K4H8QQ` são carregados de forma adiada para preservar o desempenho;
-- o ID do Meta Pixel ainda precisa ser informado para ativar o código-base da conta.
+- `index.html`: versão estática da landing para consulta e pré-visualização;
+- `assets/`: imagens e fontes usadas pela página;
+- `wordpress/mafergrade-landing/`: código-fonte do plugin publicado no WordPress;
+- `wordpress/mafergrade-landing-2.0.3.zip`: pacote instalável da versão publicada;
+- `automation/lead-capture-apps-script.gs`: código do webhook que envia os contatos para a aba `Mafer Grade` da planilha de leads.
+
+## Conversão e mensuração
+
+- formulário curto com nome, WhatsApp e linha de interesse;
+- gravação local no WordPress antes da sincronização com a planilha;
+- fila com retentativas e proteção contra duplicidade;
+- Google Tag `GT-NSLWH83J`;
+- Google Ads `AW-386301164`;
+- Google Tag Manager `GTM-K4K4H8QQ`;
+- preservação de UTMs, ValueTrack, `gclid`, `gbraid` e `wbraid`;
+- variantes de anúncio por `?linha=gradis`, `?linha=grades` e `?linha=tubos`.
 
 ## Publicação
 
-- Site: https://abneralmeida.github.io/mafergrade-grades/
-- Repositório: https://github.com/abneralmeida/mafergrade-grades
-- Hospedagem: GitHub Pages, branch `main`, diretório raiz.
-
-## Observação sobre as imagens
-
-As cenas de aplicação foram geradas com IA a partir da direção visual da Mafer Grade. A geometria dos gradis, postes, portões, fixações, grades e condições de instalação deve ser validada pela engenharia antes do uso como representação de produto ou obra executada.
+O WordPress usa o pacote em `wordpress/mafergrade-landing-2.0.3.zip`. A versão estática da raiz funciona como backup legível e não substitui o deploy oficial.
